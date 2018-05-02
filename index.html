@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="scripts/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+<title>Welcome!</title>
+</head>
+<body>
+	<div class="container">
+		<div class="page-header">
+			<h1>Introduction</h1>      
+		</div>
+		<p>In this task, you will click buttons to select the right answer. Each test contains a written color word painted with an ink that does not necessarily match the word. The image below shows two examples with different cues. After doing the task for 5 minutes, your performance will be evaluated. Notice that the buttons' position might change.</p>
+		<br/>
+		<img class="centered-img" src="resources/cat-demo.png"/>
+		<br/><br/>
+		<h2 id="h2_daysession">Please provide the participant's ID information</h3>
+		<form id="form-config" action="cat.html">
+			<div id="form-group">
+				<label for="selschool">Select School:</label>
+				<select class="form-control" id="selschool">
+					<option selected disabled hidden>Select</option>
+					<option>UCI</option>
+					<option>TAMU</option>
+					<option>UH</option>
+				</select>
+				<br/>
+				<label for="selcondition">Select Email Condition:</label>
+				<select class="form-control" id="selcondition">
+					<option selected disabled hidden>Select</option>
+					<option>Batch</option>
+					<option>Intermittent</option>
+				</select>
+				<br/>
+				<label for="txtparticipant">Participant's ID:</label>
+				<input id="txtparticipant" class="form-control" placeholder="T001" required></input>
+				<br/>
+				<input id="btn_start" type="submit" class="btn btn-danger btn-block" value="Start Study" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>
