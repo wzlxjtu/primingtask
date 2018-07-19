@@ -55,14 +55,14 @@ html {
     right: 5%;
 }
 #start {
-    font-size: 50px;
-    border: 5px solid white;
-    height: 120px;
-    width: 270px;
-    font-weight: bold;
-    position:absolute;
-    bottom: 15%;
-    left: 50%;
+  font-size: 50px;
+  border: 5px solid white;
+  height: 120px;
+  width: 270px;
+  font-weight: bold;
+  position:absolute;
+  bottom: 15%;
+  left: 50%;
 	margin-left:-140px;
 }
 #settings_img {
@@ -127,6 +127,23 @@ background-color:#fff
     font-size: 60px;
     color:#5F9EA0;
 	font-style: oblique;
+}
+#downloadScore {
+  cursor: default;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  border: 5px solid white;
+  font-weight: bold;
+  position:absolute;
+  color: white;
+  background-color: #C0C0C0;
+  text-decoration: none;
+}
+#downloadScore:hover {
+  cursor: pointer;
+  text-decoration: none;
 }
 #score2 {
     font-size: 70px;

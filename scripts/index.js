@@ -130,9 +130,36 @@ function durationUpdate() {
 		  adaptiveRT = 5;
 		  
 		  target.style.visibility = "visible";
+		  downloadScore.style.visibility="visible";
 		  target.innerHTML = "Finished!";
 	  }
 }
+
+$(downloadScore).click(function(){
+	scoreCWT = document.getElementById("score2");
+	scoreCWT = parseInt($(scoreCWT).html());
+	textFile = "CWT Score: " + scoreCWT;
+	
+	makeTextFile = function (text) {
+	var data = new Blob([text], {type: 'text/plain'});
+	
+	if (textFile !== null) {
+	  window.URL.revokeObjectURL(textFile);
+	}
+	
+	textFile = window.URL.createObjectURL(data);
+	return textFile;
+	};		
+	
+	var filename = "CWT.txt"; 
+	
+	var link = $("#downloadScore");
+	link.attr('download', filename);
+	link.attr('href', makeTextFile(textFile));
+	link.css("visibility", "visible");
+  
+});
+
 function failed() {
 		currResponse = 0;
 		adaptiveRT = lambda*adaptiveRT + (1-lambda)*5;
@@ -150,6 +177,7 @@ function getGUI() {
 	counter = document.getElementById("counter");
 	choose1 = document.getElementById("choose1");
 	score1 = document.getElementById("score1");
+	downloadScore = document.getElementById("downloadScore");
 	start = document.getElementById("start");
 	target = document.getElementById("target");
 	sound = document.getElementById('sound');
@@ -168,6 +196,7 @@ function hideGUI() {
 	cat2.style.visibility="hidden";
 	choose1.style.visibility="hidden";
 	score1.style.visibility="hidden";
+	downloadScore.style.visibility="hidden";
 	button0.style.visibility="hidden";
 	button1.style.visibility="hidden";
 	button2.style.visibility="hidden";
