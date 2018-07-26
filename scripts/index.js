@@ -151,7 +151,15 @@ $(downloadScore).click(function(){
 	return textFile;
 	};		
 	
-	var filename = "CWT.txt"; 
+	var url = window.location.href;
+	var elems = url.split('=');
+	
+	var filename = "";
+	if (elems.length == 2) {
+		filename = "CWT_" + elems[1] + ".txt"; 	
+	} else {
+		filename = "CWT.txt";
+	}
 	
 	var link = $("#downloadScore");
 	link.attr('download', filename);
