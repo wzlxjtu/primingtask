@@ -130,12 +130,14 @@ function durationUpdate() {
 		  adaptiveRT = 5;
 		  
 		  target.style.visibility = "visible";
-		  downloadScore.style.visibility="visible";
+		  //downloadScore.style.visibility="visible";
 		  target.innerHTML = "Finished!";
+		  
+		  downloadResults();
 	  }
 }
 
-$(downloadScore).click(function(){
+function downloadResults() {
 	scoreCWT = document.getElementById("score2");
 	scoreCWT = parseInt($(scoreCWT).html());
 	textFile = "CWT Score: " + scoreCWT;
@@ -164,9 +166,9 @@ $(downloadScore).click(function(){
 	var link = $("#downloadScore");
 	link.attr('download', filename);
 	link.attr('href', makeTextFile(textFile));
-	link.css("visibility", "visible");
+	link[0].click();
   
-});
+}
 
 function failed() {
 		currResponse = 0;
